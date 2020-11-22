@@ -15,9 +15,19 @@ void pauziraj(unsigned int msec) {
 }
 
 int main() {
-  //
-  // Vas kod ovdje
-  // 
 
+  char symbols[] = {'|', '/', '-', '\\'};
+
+  while (true) {
+    for (int i = 0; i < broj_kolona(); i++) {
+      std::cout << "\b " << symbols[i%4];
+      pauziraj(60);
+    }
+
+    for (int i =broj_kolona(); i > 0; i--) {
+      std::cout << "\b " << symbols[i%4];
+      pauziraj(60);
+    }
+  }
   return 0;
 }
